@@ -1,5 +1,7 @@
+var CHECKOUT_URL = "checkout.shopify.com";
+
 function browserAction_Click(tab){
-  if (tab.url.indexOf("checkout.shopify.com") > -1){
+  if (tab.url.indexOf(CHECKOUT_URL) > -1){
     chrome.tabs.executeScript(tab.id, {
         file: "jquery.js"
     });
@@ -12,8 +14,17 @@ function browserAction_Click(tab){
   }
 }
 
-function webNavigation_Complete(details){
-  console.log(details.tabId + " " + details.url);
+function webNavigation_Complete(tab){
+  console.log(tab.tabId + " " + tab.url);
+
+  if (tab.url.indexOf(CHECKOUT_URL) > -1){
+    chrome.tabs.executeScript(tab.id, {
+        file: "jquery.js"
+    });
+    chrome.tabs.executeScript(tab.id, {
+        file: "main.js"
+    });
+  }
 }
 
 chrome.browserAction.onClicked.addListener(browserAction_Click);
