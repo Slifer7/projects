@@ -6,7 +6,8 @@
     "activeTab",
     "tabs",
     "*://*/*",
-    "webNavigation"
+    "webNavigation",
+    "storage"
   ],
   "background": {
     "scripts": ["background.js"],
@@ -15,5 +16,6 @@
   "browser_action": {
     "default_title": "Auto fill my info"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+   "options_page": "options.html"
 }
