@@ -8,5 +8,7 @@ chrome.storage.sync.get({
   $("#checkout_credit_card_name").val(item.nameoncard);
   $("#checkout_credit_card_expiry").val(item.date);
   $("#checkout_credit_card_verification_value").val(item.cvv);
+
+  $(".step__footer__continue-btn")[0].click();
   }
 );
