@@ -1,0 +1,19 @@
+.projectname{
+  font-size: 80px;
+  padding: 40px;
+}
+
+li {
+  display: inline;
+
+}
+
+li a {
+  padding: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+li a:hover{
+  color: black;
+}

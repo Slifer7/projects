@@ -37,7 +37,10 @@ function browserAction_Click(tab){
 
 function webNavigation_Complete(tab){
   if (tab.url.indexOf(CHECKOUT_URL) > -1){
-    if (tab.url.indexOf("previous_step=contact_information") > -1) // Step 2
+    if (tab.url.indexOf("stock_problems") > -1) { 
+      alert("stock problems detected");
+    }
+    else if (tab.url.indexOf("previous_step=contact_information") > -1) // Step 2
     {
       // Bấm nút kế tiếp
       chrome.tabs.executeScript(tab.id, {
