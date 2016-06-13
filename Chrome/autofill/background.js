@@ -37,8 +37,13 @@ function browserAction_Click(tab){
 
 function webNavigation_Complete(tab){
   if (tab.url.indexOf(CHECKOUT_URL) > -1){
-    if (tab.url.indexOf("stock_problems") > -1) { 
-      alert("stock problems detected");
+    if (tab.url.indexOf("stock_problems") > -1) {
+      chrome.tabs.executeScript(tab.id, {
+          file: "js/jquery.js"
+      });
+      chrome.tabs.executeScript(tab.id, {
+          file: "soldout.js"
+      });
     }
     else if (tab.url.indexOf("previous_step=contact_information") > -1) // Step 2
     {
