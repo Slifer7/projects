@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Addidas autofill config page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Addidas autofill option</h1>
+      <div class="panel panel-default">
+        <div class="panel-heading">Autofill information</div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="control-label col-sm-2">First name:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtFirstName" placeholder="First name">
+              </div>
+              <label class="control-label col-sm-2">Last name:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtLastName" placeholder="Last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">Address 1:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtAddress1" placeholder="Address 1">
+              </div>
+              <label class="control-label col-sm-2">Address 2:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtAddress2" placeholder="Address 2">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">City:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCity" placeholder="City">
+              </div>
+              <label class="control-label col-sm-2">State:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtState" placeholder="State">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">Zip code:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtZipcode" placeholder="Zip code:">
+              </div>
+              <label class="control-label col-sm-2">Phone number:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtPhone" placeholder="XXX-XXX-XXXX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">Desired sizes:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="sizes" placeholder="9, 9.5, 10, 8.5, 8, 10.5, 11, 11.5, 12 (Order of preferences)">
+              </div>
+            </div>
+            </form>
+        </div><!--Panel body-->
+      </div><!--Panel-->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Billing information</div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Billing:</label>
+            <div class="col-sm-10">
+              <div class="checkbox">
+                <label><input type="checkbox" id="chkBillingDifferent">Different than shipping</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Billing Address 1:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="txtBillingAddress1" placeholder="Address 1">
+            </div>
+            <label class="control-label col-sm-2">Billing Address 2:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="txtBillingAddress2" placeholder="Address 2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Billing City:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="txtBillingCity" placeholder="City">
+            </div>
+            <label class="control-label col-sm-2">Billing State:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="txtBillingState" placeholder="State">
+            </div>
+            <label class="control-label col-sm-2">Zip code:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="txtBillingZipcode" placeholder="Zip code:">
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Payment information</div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Card number:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="cardnumber" placeholder="Card number">
+            </div>
+            <label class="control-label col-sm-2">Card number:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="nameoncard" placeholder="Name on card">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Month:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="month" placeholder="January">
+            </div>
+            <label class="control-label col-sm-1">Year:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="year" placeholder="2016">
+            </div>
+            <label class="control-label col-sm-1">CVV:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="cvv" placeholder="CVV">
+            </div>
+          </div>
+        </form>
+        </div> <!--Panel body-->
+      </div><!--Panel-->
+
+      <div class="hidden" id="divInfo" >
+        <div class="alert alert-success fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> Information saved!
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <button id="btnSave" type="button" class="btn btn-default">Save</button>
+      </div>
+  </div> <!--Container-->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/options.js"></script>
+  </body>
+</html>

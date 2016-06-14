@@ -1,25 +1,55 @@
-var config = {
-  'desired_sizes': ['9', '9.5', '10', '8.5', '8', '10.5', '11', '11.5', '12'], // arranged in order of preference
-  'billing_different_than_shipping': true, // set to use diff billing address
-  'first_name': 'Hypebeast',
-  'last_name': 'McYeezus',
-  'street_address_1': '2 Supreme St.',
-  'street_address_2': 'Suite 6',
-  'city': 'New York',
-  'state': 'New York',
-  'zipcode': '10013',
-  'phone_number': 'XXX-XXX-XXXX', // must be in this format
-  'billing_address_1': 'Billionaire Boys',
-  'billing_address_2': '',
-  'billing_city': 'Fairfax',
-  'billing_state': 'California',
-  'billing_zipcode': '90036',
-  'name_on_card': 'Hypebeast McYeezus',
-  'card_number': 'STEALMYIDENTITY101',
-  'expires_month': 'January', // must be full month name to match adidas.com
-  'expires_year': '2001',
-  'security_code': '404'
-};
+var config = {};
+
+chrome.storage.sync.get({
+  firstname: "Hypebeast",
+  lastname: "McYeezus",
+
+  address1: "2 Supreme St.",
+  address2: "Suite 6",
+  city: "New York",
+  state: "New York",
+  zipcode: "10013",
+
+  phone: "",
+  sizes: "9, 9.5, 10, 8.5, 8, 10.5, 11, 11.5, 12",
+
+  billDifferent: true,
+  Billingaddress1: "Billionaire Boys",
+  Billingaddress2: "",
+  Billingcity: "Fairfax",
+  Billingstate: "California",
+  Billingzipcode: "90036",
+
+  cardnumber: "STEALMYIDENTITY101",
+  nameoncard: "Hypebeast McYeezus",
+  month: "",
+  year: "",
+  cvv: "404"
+}, function(i){
+    config = {
+      'desired_sizes': sizes.split(', '), // arranged in order of preference
+      'billing_different_than_shipping': billDifferent,
+      'first_name': firstname,
+      'last_name': lastname,
+      'street_address_1': address1,
+      'street_address_2': address2,
+      'city': city,
+      'state': state,
+      'zipcode': zipcode,
+      'phone_number': phone,
+      'billing_address_1': Billingaddress1,
+      'billing_address_2': Billingaddress2,
+      'billing_city': Billingcity,
+      'billing_state': Billingstate,
+      'billing_zipcode': Billingzipcode,
+      'name_on_card': nameoncard,
+      'card_number': cardnumber,
+      'expires_month': month, // must be full month name to match adidas.com
+      'expires_year': year, // DONE
+      'security_code': cvv // DONE
+    };
+  }
+);
 
 function placeOrder () {
   console.log('PLACING ORDER!!!!! PRAY FOR ME FAM!!!');
