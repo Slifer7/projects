@@ -1,0 +1,19 @@
+{
+  "name": "Clipboard Copier",
+  "description": "Get data from clipboard",
+  "version": "2.0",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "*://*/*",
+    "clipboardRead"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Auto fill my info"
+  },
+  "manifest_version": 2
+}
