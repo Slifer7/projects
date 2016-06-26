@@ -36,6 +36,43 @@ function getClipboardText() {
     return clipboardText;
 }
 
+function Load()
+{
+  chrome.storage.sync.get({
+    username: "",
+    password: "",
+    site: ""
+  }, function(item){
+      gUsername = item.username;
+      gPassword = item.password;
+      gSite = item.site;
+    }
+  );
+}
+
+var gUsername;
+var gPassword;
+var gSite;
+var URL = "/savenote.php";
+
 $(document).ready(function(){
-    $("#comment").val(getClipboardText());
+  Load();
+  $("#btnSend").click(function(){
+    $.ajax({
+      "url": gSite + URL,
+			"type" : "POST",
+			"data" : {
+				username: gUsername,
+				password: gPassword,
+				text    : $("#comment").val()
+			},
+			"success" : function(data){
+        var result = JSON.parse(data);
+        $("#txtMessage").html(result.ErrorMessage);
+        //"#txtMessage").html(data);
+        $("#divInfo").toggleClass("hidden");
+      }
+    });
+  });
+  $("#comment").val(getClipboardText());
 });

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clipboard note saving config</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container">
+        <h1>Server information for note</h1>
+        <div class="panel panel-default">
+            <div class="panel-heading">Login information</div>
+            <form class="form-horizontal" role="form" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="txtUsername">Username:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="txtUsername" placeholder="Enter username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="txtPassword">Password:</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Enter password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="txtSite">Site url</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="txtSite" placeholder="Site url">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-primary" id="btnSave">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+
+        </div>
+        <div class="hidden col-sm-10" id="divInfo" >
+          <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Information saved!
+          </div>
+        </div>
+    </div><!--Container-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/options.js"></script>
+</body>
+</html>

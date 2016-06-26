@@ -16,10 +16,22 @@
   <body style="width: 400px;">
     <div class="container">
       <div class="form-group">
-      <label for="comment">Data collect from clipboard:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
+        <label for="comment">Data collect from clipboard:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+      </div>
+      <div class="container text-center">
+        <button type="button" class="btn btn-primary" id="btnSend">Send to my site</button>
+      </div>
+      <div style="height: 30px;">
+      </div>
     </div>
+    <div class="hidden" id="divInfo" >
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <div id="txtMessage"><strong>Success!</strong> Information saved!</div>
+      </div>
     </div>
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/popup.js"></script>

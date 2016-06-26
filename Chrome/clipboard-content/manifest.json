@@ -6,7 +6,8 @@
     "activeTab",
     "tabs",
     "*://*/*",
-    "clipboardRead"
+    "clipboardRead",
+    "storage"
   ],
   "background": {
     "scripts": ["background.js"],
@@ -16,5 +17,6 @@
     "default_title": "Auto fill my info",
     "default_popup": "popup.html"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "options_page": "options.html"
 }
