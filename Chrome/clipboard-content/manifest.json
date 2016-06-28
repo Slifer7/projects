@@ -7,7 +7,8 @@
     "tabs",
     "*://*/*",
     "clipboardRead",
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "background": {
     "scripts": ["background.js"],

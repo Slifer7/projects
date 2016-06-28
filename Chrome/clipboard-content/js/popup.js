@@ -55,24 +55,29 @@ var gPassword;
 var gSite;
 var URL = "/savenote.php";
 
+function Save(){
+  $.ajax({
+    "url": gSite + URL,
+    "type" : "POST",
+    "data" : {
+      username: gUsername,
+      password: gPassword,
+      text    : $("#comment").val(),
+      tags: $("#txtTags").val()
+    },
+    "success" : function(data){
+      var result = JSON.parse(data);
+      alert(result.ErrorMessage);
+
+      if (result.OK){
+        window.close();
+      }
+    }
+  });
+}
+
 $(document).ready(function(){
   Load();
-  $("#btnSend").click(function(){
-    $.ajax({
-      "url": gSite + URL,
-			"type" : "POST",
-			"data" : {
-				username: gUsername,
-				password: gPassword,
-				text    : $("#comment").val()
-			},
-			"success" : function(data){
-        var result = JSON.parse(data);
-        $("#txtMessage").html(result.ErrorMessage);
-        //"#txtMessage").html(data);
-        $("#divInfo").toggleClass("hidden");
-      }
-    });
-  });
+  $("#btnSend").click(Save);
   $("#comment").val(getClipboardText());
 });

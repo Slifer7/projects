@@ -7,33 +7,36 @@
     <title></title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-tagsinput.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body style="width: 400px;">
-    <div class="container">
-      <div class="form-group">
-        <label for="comment">Data collect from clipboard:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-      </div>
-      <div class="container text-center">
-        <button type="button" class="btn btn-primary" id="btnSend">Send to my site</button>
-      </div>
-      <div style="height: 30px;">
+  <body style="width: 400px; text-align:center; margin: 0 auto; ">
+    <div style="width: 400px; ">
+      <div style="text-align: left;">
+        <form role="form">
+          <div class="form-group">
+            <label for="comment">Data collect from clipboard:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-2">
+                <label class="control-label col-sm-2">Tags:</label>
+              </div>
+              <div class="col-sm-10"><input type="text" id="txtTags" data-role="tagsinput"></div>
+          </div>
+          <div class="col-sm-12 text-center" style="margin-top: 15px;">
+            <button type="button" class="btn btn-primary" id="btnSend">Send to my site</button>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="hidden" id="divInfo" >
-      <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <div id="txtMessage"><strong>Success!</strong> Information saved!</div>
-      </div>
-    </div>
-
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-tagsinput.js"></script>
     <script src="js/popup.js"></script>
   </body>
 </html>

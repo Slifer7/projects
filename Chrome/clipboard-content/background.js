@@ -40,4 +40,26 @@ function browserAction_Click(tab){
 	alert(getClipboardText());
 }
 
+function ctxMenu_Click(){
+  alert(getClipboardText());
+}
+
+
 chrome.browserAction.onClicked.addListener(browserAction_Click);
+chrome.runtime.onInstalled.addListener(function() {
+    chrome.contextMenus.create({
+        title: 'Send to my site',
+        id: 'menu1', // you'll use this in the handler function to identify this context menu item
+        contexts: ['all'],
+    });
+});
+
+chrome.contextMenus.onClicked.addListener(function(info, tab) {
+    if (info.menuItemId === "menu1") { // here's where you'll need the ID
+      chrome.tabs.executeScript(null, {
+        code: 'document.execCommand("copy")'
+      }, function(){
+        chrome.tabs.create({'url': chrome.extension.getURL('popup.html'), 'selected': true});
+      });
+    }
+});
